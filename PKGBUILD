@@ -5,9 +5,9 @@ pkgdesc="Cargofetch is a lightweight CLI tool written in Rust that fetches metad
 arch=('x86_64')
 url="https://github.com/arjav0703/cargofetch"
 license=('MIT')
-depends=('libssl' 'cargo')
-makedepends=('rust' 'cargo' 'openssl')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/youruser/mycli/archive/refs/tags/v$pkgver.tar.gz")
+depends=( 'cargo')
+makedepends=('cargo')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/arjav0703/cargofetch/archive/refs/tags/v$pkgver.tar.gz")
 sha512sums=('SKIP')  # replace SKIP with real sha512sum or keep SKIP during testing
 
 build() {
@@ -17,6 +17,6 @@ build() {
 
 package() {
   cd "$srcdir/$pkgname-$pkgver"
-  install -Dm755 "target/release/mycli" "$pkgdir/usr/bin/mycli"
+  install -Dm755 "target/release/cargofetch" "$pkgdir/usr/bin/cargofetch"
 }
 
